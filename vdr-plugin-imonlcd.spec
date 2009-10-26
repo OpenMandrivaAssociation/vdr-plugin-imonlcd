@@ -20,8 +20,8 @@ URL:		http://projects.vdr-developer.org/wiki/plg-imonlcd
 # rm -rf vdr-plugin-imonlcd
 # git clone git://community.xeatre.tv/vdr-plugin-imonlcd.git
 # cd vdr-plugin-imonlcd
-# git archive --prefix=imonlcd-$(date +%Y%m%d)/ --format=tar HEAD | xz > ../vdr-imonlcd-$(date +%Y%m%d).tar.xz
-Source:		vdr-%plugin-%snap.tar.xz
+# git archive --prefix=imonlcd-$(date +%Y%m%d)/ --format=tar HEAD | bzip2 > ../vdr-imonlcd-$(date +%Y%m%d).tar.bz2
+Source:		vdr-%plugin-%snap.tar.bz2
 %else
 Source:		vdr-%plugin-%version.tgz
 %endif
