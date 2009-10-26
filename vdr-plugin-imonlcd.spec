@@ -29,6 +29,7 @@ Source:		vdr-%plugin-%version.tgz
 Patch0:		imonlcd-drop-extra-include.patch
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	vdr-devel >= 1.6.0
+BuildRequires:	freetype2-devel
 Requires:	vdr-abi = %vdr_abi
 Requires:	kmod(lirc_imon)
 
