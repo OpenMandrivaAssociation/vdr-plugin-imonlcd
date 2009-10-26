@@ -25,6 +25,8 @@ Source:		vdr-%plugin-%snap.tar.xz
 %else
 Source:		vdr-%plugin-%version.tgz
 %endif
+# includes fontconfig.h but does not use it:
+Patch0:		imonlcd-drop-extra-include.patch
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	vdr-devel >= 1.6.0
 Requires:	vdr-abi = %vdr_abi
@@ -40,6 +42,7 @@ current state of VDR on an iMON LCD screen.
 %else
 %setup -q -n %plugin-%version
 %endif
+%patch0 -p1
 %vdr_plugin_prep
 
 %vdr_plugin_params_begin %plugin
