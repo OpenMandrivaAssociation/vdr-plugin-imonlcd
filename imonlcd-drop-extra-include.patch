@@ -1,0 +1,12 @@
+Index: imonlcd-20090808/ffont.h
+===================================================================
+--- imonlcd-20090808/ffont.h
++++ imonlcd-20090808/ffont.h	2009-10-26 16:08:16.256677409 +0200
+@@ -16,7 +16,6 @@
+ #define __IMON_FONT_H___
+ 
+ #include <vdr/font.h>
+-#include <fontconfig/fontconfig.h>
+ #include <ft2build.h>
+ #include FT_FREETYPE_H
+ #include "bitmap.h"
