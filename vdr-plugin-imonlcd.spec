@@ -76,3 +76,11 @@ rm -rf %{buildroot}
 %files -f %plugin.vdr
 %defattr(-,root,root)
 %doc README HISTORY
+
+
+%changelog
+* Mon Oct 26 2009 Anssi Hannula <anssi@mandriva.org> 0.0.2-1.20091026.1mdv2010.1
++ Revision: 459413
+- do not include unused fontconfig header (drop-extra-include.patch)
+- initial Mandriva release
+
