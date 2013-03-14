@@ -3,7 +3,7 @@
 %define name	vdr-plugin-%plugin
 %define version	0.0.2
 %define snap	20091026
-%define rel	1
+%define rel	2
 
 Summary:	VDR plugin: Control an iMON LCD
 Name:		%name
@@ -27,7 +27,6 @@ Source:		vdr-%plugin-%version.tgz
 %endif
 # includes fontconfig.h but does not use it:
 Patch0:		imonlcd-drop-extra-include.patch
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	vdr-devel >= 1.6.0
 BuildRequires:	freetype2-devel
 Requires:	vdr-abi = %vdr_abi
@@ -61,17 +60,7 @@ param="-p PROTOCOL"
 %vdr_plugin_build
 
 %install
-rm -rf %{buildroot}
 %vdr_plugin_install
-
-%clean
-rm -rf %{buildroot}
-
-%post
-%vdr_plugin_post %plugin
-
-%postun
-%vdr_plugin_postun %plugin
 
 %files -f %plugin.vdr
 %defattr(-,root,root)
