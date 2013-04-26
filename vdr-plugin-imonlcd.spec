@@ -28,7 +28,7 @@ Source:		vdr-%plugin-%version.tgz
 # includes fontconfig.h but does not use it:
 Patch0:		imonlcd-drop-extra-include.patch
 BuildRequires:	vdr-devel >= 1.6.0
-BuildRequires:	freetype2-devel
+BuildRequires:	pkgconfig(freetype2)
 Requires:	vdr-abi = %vdr_abi
 Requires:	kmod(lirc_imon)
 
