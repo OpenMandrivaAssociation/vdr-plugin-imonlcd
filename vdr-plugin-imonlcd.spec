@@ -1,21 +1,17 @@
-
 %define plugin	imonlcd
-%define name	vdr-plugin-%plugin
-%define version	0.0.2
-%define snap	20091026
-%define rel	2
+%define snap	0
 
 Summary:	VDR plugin: Control an iMON LCD
-Name:		%name
-Version:	%version
+Name:		vdr-plugin-%plugin
+Version:	1.0.1
 %if %snap
-Release:	%mkrel 1.%snap.%rel
+Release:	1.%snap.1
 %else
-Release:	%mkrel %rel
+Release:	1
 %endif
 Group:		Video
 License:	GPLv3
-URL:		http://projects.vdr-developer.org/wiki/plg-imonlcd
+URL:		http://projects.vdr-developer.org/projects/plg-imonlcd
 %if %snap
 # rm -rf vdr-plugin-imonlcd
 # git clone git://community.xeatre.tv/vdr-plugin-imonlcd.git
@@ -23,14 +19,11 @@ URL:		http://projects.vdr-developer.org/wiki/plg-imonlcd
 # git archive --prefix=imonlcd-$(date +%Y%m%d)/ --format=tar HEAD | bzip2 > ../vdr-imonlcd-$(date +%Y%m%d).tar.bz2
 Source:		vdr-%plugin-%snap.tar.bz2
 %else
-Source:		vdr-%plugin-%version.tgz
+Source:		vdr-%plugin-%{version}.tgz
 %endif
-# includes fontconfig.h but does not use it:
-Patch0:		imonlcd-drop-extra-include.patch
 BuildRequires:	vdr-devel >= 1.6.0
-BuildRequires:	pkgconfig(freetype2)
+BuildRequires:	freetype2-devel
 Requires:	vdr-abi = %vdr_abi
-Requires:	kmod(lirc_imon)
 
 %description
 A Video Disk Recorder plugin that shows information about the
@@ -40,9 +33,8 @@ current state of VDR on an iMON LCD screen.
 %if %snap
 %setup -q -n %plugin-%snap
 %else
-%setup -q -n %plugin-%version
+%setup -q -n %plugin-%{version}
 %endif
-%patch0 -p1
 %vdr_plugin_prep
 
 %vdr_plugin_params_begin %plugin
@@ -63,13 +55,4 @@ param="-p PROTOCOL"
 %vdr_plugin_install
 
 %files -f %plugin.vdr
-%defattr(-,root,root)
 %doc README HISTORY
-
-
-%changelog
-* Mon Oct 26 2009 Anssi Hannula <anssi@mandriva.org> 0.0.2-1.20091026.1mdv2010.1
-+ Revision: 459413
-- do not include unused fontconfig header (drop-extra-include.patch)
-- initial Mandriva release
-

@@ -1,2 +1,4 @@
+removed_sources:
+  vdr-imonlcd-20091026.tar.bz2: 42f4a1dd27554997fd5ff3a81597a83216c6c5b0
 sources:
-  "vdr-imonlcd-20091026.tar.bz2": 42f4a1dd27554997fd5ff3a81597a83216c6c5b0
+  vdr-imonlcd-1.0.1.tgz: baffe351ffd195af65f36d16af236cf31bba9ff1
