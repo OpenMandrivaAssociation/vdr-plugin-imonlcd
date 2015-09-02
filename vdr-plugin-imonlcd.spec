@@ -22,7 +22,7 @@ Source:		vdr-%plugin-%snap.tar.bz2
 Source:		vdr-%plugin-%{version}.tgz
 %endif
 BuildRequires:	vdr-devel >= 1.6.0
-BuildRequires:	freetype2-devel
+BuildRequires:	pkgconfig(freetype2)
 Requires:	vdr-abi = %vdr_abi
 
 %description
