@@ -11,7 +11,7 @@ Release:	1
 %endif
 Group:		Video
 License:	GPLv3
-URL:		http://projects.vdr-developer.org/projects/plg-imonlcd
+URL:		https://projects.vdr-developer.org/projects/plg-imonlcd
 %if %snap
 # rm -rf vdr-plugin-imonlcd
 # git clone git://community.xeatre.tv/vdr-plugin-imonlcd.git
